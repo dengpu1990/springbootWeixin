@@ -1,6 +1,6 @@
-package com.dengpu.demo.msg;
+package com.dengpu.demo.model.menu;
 
-/** 
+/**
  *  
  * 类名称: Menu 
  * 类描述: 菜单 
@@ -9,7 +9,7 @@ package com.dengpu.demo.msg;
  */  
 public class Menu {  
       
-    private Button[] button;  
+    private Button[] button;
   
     public Button[] getButton() {  
         return button;  

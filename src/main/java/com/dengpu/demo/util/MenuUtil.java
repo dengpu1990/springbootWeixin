@@ -1,11 +1,11 @@
 package com.dengpu.demo.util;
 
-import com.dengpu.demo.msg.Button;
-import com.dengpu.demo.msg.ClickButton;
-import com.dengpu.demo.msg.Menu;
-import com.dengpu.demo.msg.ViewButton;
+import com.alibaba.fastjson.JSONObject;
+import com.dengpu.demo.model.menu.Button;
+import com.dengpu.demo.model.menu.ClickButton;
+import com.dengpu.demo.model.menu.Menu;
+import com.dengpu.demo.model.menu.ViewButton;
 
-import net.sf.json.JSONObject;
 
 /** 
  *  
@@ -29,7 +29,7 @@ public class MenuUtil {
         JSONObject json = WeiXinUtil.doPoststr(url, Menu);  
         if(json!=null){  
             //从返回的数据包中取数据{"errcode":0,"errmsg":"ok"}  
-            result = json.getInt("errcode");  
+            result = json.getInteger("errcode");
         }  
         return result;  
     }  
@@ -68,6 +68,6 @@ public class MenuUtil {
         //封装菜单  
         Menu menu = new Menu();  
         menu.setButton(new Button[]{button11,button21,button});  
-        return JSONObject.fromObject(menu).toString();  
+        return JSONObject.toJSONString(menu);
     }  
 }  

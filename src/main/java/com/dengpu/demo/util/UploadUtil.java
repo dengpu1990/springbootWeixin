@@ -1,20 +1,14 @@
 package com.dengpu.demo.util;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import com.alibaba.fastjson.JSONObject;
+
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 
-import net.sf.json.JSONObject;  
 /** 
  *  
  * 类名称: UploadUtil 
@@ -114,7 +108,7 @@ public class UploadUtil {
             }  
         }  
   
-        JSONObject jsonObj = JSONObject.fromObject(result);  
+        JSONObject jsonObj = JSONObject.parseObject(result);
         String typeName = "media_id";  
         if("thumb".equals(type)){  
             typeName = type + "_media_id";  

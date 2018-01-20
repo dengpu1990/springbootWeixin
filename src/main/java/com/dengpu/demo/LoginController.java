@@ -1,21 +1,17 @@
 package com.dengpu.demo;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.dengpu.demo.util.CheckUtil;
+import com.dengpu.demo.util.MessageUtil;
+import com.dengpu.demo.util.TextMessageUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.dengpu.demo.util.CheckUtil;
-import com.dengpu.demo.util.MenuUtil;
-import com.dengpu.demo.util.MessageUtil;
-import com.dengpu.demo.util.TextMessageUtil;
-import com.dengpu.demo.util.WeiXinUtil;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Map;
 
 /**
  * 
@@ -52,7 +48,7 @@ public class LoginController {
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = null;
 		// 将微信请求xml转为map格式，获取所需的参数
-		Map<String, String> map = MessageUtil.xmlToMap(request);
+		Map<String, String> map = MessageUtil.parseXml(request);
 		String ToUserName = map.get("ToUserName");
 		String FromUserName = map.get("FromUserName");
 		String MsgType = map.get("MsgType");

@@ -10,17 +10,17 @@ package com.dengpu.demo.util;
 public interface BaseMessageUtil <T>{  
     /** 
      * 将回复的信息对象转xml格式给微信 
-     * @param message 
+     * @param t
      * @return 
      */  
     public  abstract  String messageToxml(T t);  
       
     /** 
      * 回复的信息封装 
-     * @param FromUserName 
-     * @param ToUserName 
-     * @param Content 
+     * @param fromUserName
+     * @param toUserName
+     * @param content
      * @return 
      */  
-    public abstract  String initMessage(String FromUserName,String ToUserName);  
+    public abstract  String initMessage(String fromUserName,String toUserName,String content);
 }  

@@ -1,6 +1,6 @@
-package com.dengpu.demo.msg;
+package com.dengpu.demo.model.menu;
 
-public class ViewButton extends Button{  
+public class ViewButton extends Button {
     
     private String url;//网页链接  
   

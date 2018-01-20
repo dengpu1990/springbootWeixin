@@ -1,4 +1,4 @@
-package com.dengpu.demo.msg;
+package com.dengpu.demo.model.menu;
 
 /** 
  *  
